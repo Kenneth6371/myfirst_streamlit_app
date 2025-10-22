@@ -17,6 +17,7 @@ def get_market_change_data(target_date, target_time):
         query = f"{target_date} {target_time} 大盘涨跌幅,所属概念"
         # 获取数据
         df = pywencai.get(query=query, loop=True)
+        st.write("数据获取结果：", df)  # 云端日志中查看是否为None
         if df is None or df.empty:
             return None
         # 模糊匹配涨跌幅字段
