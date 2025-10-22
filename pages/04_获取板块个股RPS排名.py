@@ -24,7 +24,8 @@ def get_index_data(period, concept):
     start_date, end_date = get_date_range(period)
     query = f"近{period}日涨跌幅，{concept}"
     try:
-        df = pywencai.get(query=query, loop=True)
+        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"}
+        df = pywencai.get(query=query, loop=True, headers=headers)
         if df is None:
             st.warning(f"pywencai 未返回任何数据（可能接口调用失败）")
             return None
