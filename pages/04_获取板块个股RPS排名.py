@@ -25,6 +25,9 @@ def get_index_data(period, concept):
     query = f"近{period}日涨跌幅，{concept}"
     try:
         df = pywencai.get(query=query, loop=True)
+        if df is None:
+            st.warning(f"pywencai 未返回任何数据（可能接口调用失败）")
+            return None
         if df.empty:
             st.warning(f"未获取到近{period}日数据")
             return None
