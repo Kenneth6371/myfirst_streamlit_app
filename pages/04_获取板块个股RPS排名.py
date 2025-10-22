@@ -83,7 +83,7 @@ def app():
                 if df is not None:
                     dataframes[period] = df
             if not dataframes:
-                st.error("未获取到任何数据")
+                st.error("未获取到任何数据，原因not dataframes")
                 return
             # 合并数据
             merged_df = None
