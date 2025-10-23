@@ -8,3 +8,4 @@ py-mini-racer>=0.6.0
 akshare>=1.9.0
 numpy>=1.21.0
 pywencai>=0.13.1
+scipy==1.13.1
