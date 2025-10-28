@@ -9,3 +9,4 @@ akshare>=1.9.0
 numpy>=1.21.0
 pywencai>=0.13.1
 scipy>=1.13.1
+pandas_market_calendars>=5.1.1
